@@ -6,8 +6,12 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+h1 {
+    color: grey;
 }
 .container {
     width: 500px;
@@ -16,8 +20,38 @@ body {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
-
+    gap: 1px;
+    background-color: black;
+}
+.box {
+    background-color: white;
 }
 .border {
     border: 1px solid black;
+}
+.grey {
+    background-color: grey;
+}
+.button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin:2rem auto;
+}
+.grid-btn {
+    padding:.5rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+}
+.grid-btn:hover , .clear-btn:hover {
+    background-color: white;
+    color: black;
+}
+.clear-btn {
+    width: 500px;
+    margin-bottom:2rem;
+    padding: .5rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
 }
