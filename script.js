@@ -1,7 +1,10 @@
 const container=document.querySelector(".container");
 const clear=document.querySelector(".clear-btn");
+let boxes=Array.from(document.querySelectorAll(".box"));
 let i=0;
 let gridOption=0;
+
+
 function gridConstructor(gridCol){
 for (i=0;i<gridCol*gridCol;i++){
     const div=document.createElement('div');
@@ -9,7 +12,6 @@ for (i=0;i<gridCol*gridCol;i++){
     container.appendChild(div);
 };
 };
-gridConstructor(16);
 
 function boxRemoval(){
 boxes=Array.from(document.querySelectorAll(".box"));
@@ -18,7 +20,7 @@ boxes.forEach(div => {
         console.log("remove boxes");
 })
 }
-let boxes=Array.from(document.querySelectorAll(".box"));
+
 function buttonListener(){
 boxes.forEach(div => {
     div.addEventListener("mouseover",()=>{
@@ -31,6 +33,7 @@ clear.addEventListener("click",()=>{
     });
 });
 };
+gridConstructor(16);
 buttonListener();
 
 const buttons=Array.from(document.querySelectorAll(".grid-btn"));

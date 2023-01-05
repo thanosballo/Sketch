@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +11,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family:'Unica One', serif ;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 h1 {
     color: grey;
