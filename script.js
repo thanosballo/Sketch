@@ -19,6 +19,7 @@ boxes.forEach(div => {
 })
 }
 let boxes=Array.from(document.querySelectorAll(".box"));
+function buttonListener(){
 boxes.forEach(div => {
     div.addEventListener("mouseover",()=>{
         div.classList.add("grey");
@@ -29,6 +30,8 @@ clear.addEventListener("click",()=>{
         div.classList.remove("grey");
     });
 });
+};
+buttonListener();
 
 const buttons=Array.from(document.querySelectorAll(".grid-btn"));
 buttons.forEach(button => {
@@ -41,16 +44,20 @@ buttons.forEach(button => {
             case "16":
                 gridConstructor(16);
                 container.classList.add("container16");
+                boxes=Array.from(document.querySelectorAll(".box"));
+                buttonListener();
                 break;
             case "32":
-                container.setAttribute(`style`,`grid-template-columns: repeat(32, 1fr)`);
-                container.setAttribute(`style`,`grid-template-rows: repeat(32, 1fr)`);
+                container.classList.add("container32");
                 gridConstructor(32);
+                boxes=Array.from(document.querySelectorAll(".box"));
+                buttonListener();
                 break;
             case "64":
-                container.setAttribute(`style`,`grid-template-columns: repeat(64, 1fr)`);
-                container.setAttribute(`style`,`grid-template-rows: repeat(64, 1fr)`);
+                container.classList.add("container64");
                 gridConstructor(64);
+                boxes=Array.from(document.querySelectorAll(".box"));
+                buttonListener();
                 break;
         };
     })
