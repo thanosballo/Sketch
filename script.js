@@ -2,7 +2,6 @@ const container=document.querySelector(".container");
 const clear=document.querySelector(".clear-btn");
 let i=0;
 let gridOption=0;
-let gridCol=0;
 function gridConstructor(gridCol){
 for (i=0;i<gridCol*gridCol;i++){
     const div=document.createElement('div');
@@ -12,10 +11,16 @@ for (i=0;i<gridCol*gridCol;i++){
 };
 gridConstructor(16);
 
-const boxes=Array.from(document.querySelectorAll(".box"));
+function boxRemoval(){
+boxes=Array.from(document.querySelectorAll(".box"));
+boxes.forEach(div => {
+        div.remove();
+        console.log("remove boxes");
+})
+}
+let boxes=Array.from(document.querySelectorAll(".box"));
 boxes.forEach(div => {
     div.addEventListener("mouseover",()=>{
-        
         div.classList.add("grey");
     });
 });
@@ -30,11 +35,12 @@ buttons.forEach(button => {
     button.addEventListener("click",()=>{
         console.log(button.dataset.grid);
         gridOption=button.dataset.grid;
+        boxRemoval();
+        container.classList.remove("container16","container32","container64");
         switch (gridOption){
             case "16":
-                container.setAttribute(`style`,`grid-template-columns: repeat(16, 1fr)`);
-                container.setAttribute(`style`,`grid-template-rows: repeat(16, 1fr)`);
                 gridConstructor(16);
+                container.classList.add("container16");
                 break;
             case "32":
                 container.setAttribute(`style`,`grid-template-columns: repeat(32, 1fr)`);

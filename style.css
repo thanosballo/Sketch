@@ -17,11 +17,25 @@ h1 {
     width: 500px;
     height: 500px;
     margin: 0 auto;
+    background-color: black;
+}
+.container16 {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
     gap: 1px;
-    background-color: black;
+}
+.container32 {
+    display: grid;
+    grid-template-columns: repeat(32, 1fr);
+    grid-template-rows: repeat(32, 1fr);
+    gap: 1px;
+}
+.container64 {
+    display: grid;
+    grid-template-columns: repeat(64, 1fr);
+    grid-template-rows: repeat(64, 1fr);
+    gap: 1px;
 }
 .box {
     background-color: white;
